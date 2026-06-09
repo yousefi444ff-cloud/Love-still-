@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>Love Page 💕</title>
+
+<style>
+body{
+margin:0;
+font-family:tahoma;
+overflow:hidden;
+background:black;
+}
+
+/* انیمیشن */
+.fade{
+animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* صفحه اول */
+#step1{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(135deg,#ff4d6d,#ffe6f0);
+}
+
+.box{
+border:2px solid white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 25px white;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(6px);
+}
+
+.heart{
+font-size:90px;
+cursor:pointer;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+/* ویدیو */
+#step2{
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+background:black;
+}
+
+video{
+width:100%;
+height:100vh;
+background:black;
+}
+
+/* صفحه آخر */
+#step3{
+height:100vh;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#fff,#ffe6f0);
+}
+
+img{
+width:260px;
+border-radius:20px;
+box-shadow:0 0 25px pink;
+margin-bottom:20px;
+}
+
+h2{
+color:#d1006f;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- صفحه 1 -->
+<div id="step1" class="fade">
+<div class="box">
+<div class="heart" onclick="playVideo()">💖</div>
+<p>با لبخند روی قلب کلیک کن 😊</p>
+</div>
+</div>
+
+<!-- صفحه 2 -->
+<div id="step2">
+<video id="video" controls autoplay>
+  <source src="https://d.uguu.se/jCLiWNjA.mp4" type="video/mp4">
+</video>
+</div>
+
+<!-- صفحه 3 -->
+<div id="step3">
+<img src="https://i.postimg.cc/K8jJfzdF/file-000000000fa071f7bb2f5e25672f070b.jpg">
+<h2>خوشحالم که این لحظه رو ساختی 💕</h2>
+</div>
+
+<script>
+function playVideo(){
+document.getElementById("step1").style.display="none";
+document.getElementById("step2").style.display="flex";
+
+let v = document.getElementById("video");
+
+v.onended = function(){
+document.getElementById("step2").style.display="none";
+document.getElementById("step3").style.display="flex";
+};
+}
+</script>
+
+</body>
+</html>
